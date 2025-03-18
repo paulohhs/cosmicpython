@@ -17,7 +17,7 @@ def allocate(line: OrderLine, batches: List[Batch]) -> str:
         raise OutOfStock(f"Out of stock for sku {line.sku}")
 
 
-@dataclass(unsafe_hash=True)
+@dataclass(frozen=True)
 class OrderLine:
     orderid: str
     sku: str
